@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     port: 5173,
     // proxy only works in LOCAL development
-    // in production Netlify uses VITE_API_URL from env
+    // in production Netlify uses VITE_API_URL from en
     proxy: {
       '/api': {
         target: 'http://localhost:5000',
