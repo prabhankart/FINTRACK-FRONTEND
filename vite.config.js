@@ -5,11 +5,16 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    // proxy only works in LOCAL development
+    // in production Netlify uses VITE_API_URL from env
     proxy: {
       '/api': {
         target: 'http://localhost:5000',
         changeOrigin: true
       }
     }
+  },
+  build: {
+    outDir: 'dist'
   }
 })
